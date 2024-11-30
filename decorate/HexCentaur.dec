@@ -1,0 +1,149 @@
+ACTOR Centaur_Toby : Centaur replaces Centaur
+{
+	States
+	{
+	Spawn:
+		CENT AB 10 A_Look
+		Loop
+	See:
+		CENT AA 3 A_Chase
+		CENT BB 3 A_Chase
+		CENT B 0 A_PlaySound("monsters/centaur/walk")
+		CENT CC 3 A_Chase
+		CENT DD 3 A_Chase
+		CENT D 0 A_PlaySound("monsters/centaur/walk")
+		Loop
+	Pain:
+		CENT G 6 A_Pain
+		CENT G 6 A_SetReflectiveInvulnerable
+		CENT E 0 A_PlaySound("monsters/centaur/shield")
+		CENT EEE 15 A_CentaurDefend
+		CENT E 1 A_UnsetReflectiveInvulnerable
+		CENT E 0 A_PlaySound("monsters/centaur/shield2")
+		Goto See
+	Melee:
+		CENT H 5 A_FaceTarget
+		CENT I 4 A_FaceTarget
+		CENT J 7 A_CustomMeleeAttack(random[CentaurAttack](3,9))
+		Goto See
+	Death:
+		CENT K 4
+		CENT L 4 A_Scream
+		CENT MN 4
+		CENT O 4 A_NoBlocking
+		CENT PQ 4
+		CENT R 4 A_QueueCorpse
+		CENT S 4
+		CENT T -1
+		Stop
+	XDeath:
+		CTXD A 4
+		CTXD B 4 A_NoBlocking
+		CTXD C 0 A_SpawnItemEx("CentaurSword", 0, 0, 45,
+								1 + random[CentaurDrop](-128,127)*0.03125,
+								1 + random[CentaurDrop](-128,127)*0.03125,
+								8 + random[CentaurDrop](0,255)*0.015625, 270)
+		CTXD C 4 A_SpawnItemEx("CentaurShield", 0, 0, 45,
+								1 + random[CentaurDrop](-128,127)*0.03125,
+								1 + random[CentaurDrop](-128,127)*0.03125,
+								8 + random[CentaurDrop](0,255)*0.015625, 90)
+		CTXD D 3 A_Scream
+		CTXD E 4 A_QueueCorpse
+		CTXD F 3
+		CTXD G 4
+		CTXD H 3
+		CTXD I 4
+		CTXD J 3
+		CTXD K -1
+	Ice:
+		CENT U 5 A_FreezeDeath
+		CENT U 1 A_FreezeDeathChunks
+		Wait
+	}
+}
+
+// Centaur Leader -----------------------------------------------------------
+
+ACTOR CentaurLeader_Toby : Centaur_Toby replaces CentaurLeader
+{
+	Game Hexen
+	SpawnID 2
+	Health 250
+	PainChance 96 
+	Speed 10
+	Obituary "$OB_SLAUGHTAUR"
+	HitObituary "$OB_SLAUGHTAURHIT"
+	SeeSound "monsters/slaughtor/sight"
+	ActiveSound "monsters/slaughtor/active"
+	PainSound "monsters/slaughtor/pain"
+	DeathSound "monsters/slaughtor/death"
+	States
+	{
+	Spawn:
+		CNT2 AB 10 A_Look
+		Loop
+	See:
+		CNT2 AA 3 A_Chase
+		CNT2 BB 3 A_Chase
+		CNT2 B 0 A_PlaySound("monsters/centaur/walk")
+		CNT2 CC 3 A_Chase
+		CNT2 DD 3 A_Chase
+		CNT2 D 0 A_PlaySound("monsters/centaur/walk")
+		Loop
+	Pain:
+		CNT2 G 6 A_Pain
+		CNT2 G 6 A_SetReflectiveInvulnerable
+		CNT2 E 0 A_PlaySound("monsters/centaur/shield")
+		CNT2 EEE 15 A_CentaurDefend
+		CNT2 E 1 A_UnsetReflectiveInvulnerable
+		CNT2 E 0 A_PlaySound("monsters/centaur/shield2")
+		Goto See
+	Missile:
+		CNT2 E 0 A_PlaySound("monsters/centaur/shield")
+		CNT2 E 10 A_FaceTarget
+		CNT2 F 8 Bright A_CustomMissile("CentaurFX", 45, 0, 0, CMF_AIMOFFSET)
+		CNT2 E 10 A_FaceTarget
+		CNT2 F 8 Bright A_CustomMissile("CentaurFX", 45, 0, 0, CMF_AIMOFFSET)
+		CNT2 E 0 A_PlaySound("monsters/centaur/shield2")
+		Goto See
+	Melee:
+		CNT2 H 5 A_FaceTarget
+		CNT2 I 4 A_FaceTarget
+		CNT2 J 7 A_CustomMeleeAttack(random[CentaurAttack](3,9))
+		Goto See
+	Death:
+		CNT2 K 4
+		CNT2 L 4 A_Scream
+		CNT2 MN 4
+		CNT2 O 4 A_NoBlocking
+		CNT2 PQ 4
+		CNT2 R 4 A_QueueCorpse
+		CNT2 S 4
+		CNT2 T -1
+		Stop
+	XDeath:
+		C2XD A 4
+		C2XD B 4 A_NoBlocking
+		C2XD C 0 A_SpawnItemEx("CentaurSword", 0, 0, 45,
+								1 + random[CentaurDrop](-128,127)*0.03125,
+								1 + random[CentaurDrop](-128,127)*0.03125,
+								8 + random[CentaurDrop](0,255)*0.015625, 270)
+		C2XD C 4 A_SpawnItemEx("CentaurShield", 0, 0, 45,
+								1 + random[CentaurDrop](-128,127)*0.03125,
+								1 + random[CentaurDrop](-128,127)*0.03125,
+								8 + random[CentaurDrop](0,255)*0.015625, 90)
+		C2XD D 3 A_Scream
+		C2XD E 4 A_QueueCorpse
+		C2XD F 3
+		C2XD G 4
+		C2XD H 3
+		C2XD I 4
+		C2XD J 3
+		C2XD K -1
+	}
+}		
+
+ACTOR CentaurFX_Toby : CentaurFX replaces CentaurFX
+{
+	+THRUGHOST
+}

@@ -1,0 +1,41 @@
+ACTOR IceGuy_Toby : IceGuy replaces IceGuy
+{
+	States
+	{
+	Spawn:
+		ICEY AB 10 A_IceGuyLook
+		Loop
+	See:
+		ICEY AA 3 A_Chase
+		ICEY A 0 A_PlaySound("monsters/wendigo/step")
+		ICEY BB 3 A_IceGuyChase
+		ICEY CC 3 A_Chase
+		ICEY C 0 A_PlaySound("monsters/wendigo/step")
+		ICEY DD 3 A_Chase
+		Loop
+	Pain:
+		ICEY A 1 A_Pain
+		Goto See
+	Missile:
+		ICEY EF 3 A_FaceTarget
+		ICEY G 8 Bright A_IceGuyAttack
+		ICEY F 4 A_FaceTarget
+		Goto See
+	Death:
+		ICEY A 1 A_IceGuyDie
+		Stop
+	Inactive:
+		ICEY A -1
+		Goto See
+	}
+}
+
+ACTOR IceGuyFX_Toby : IceGuyFX replaces IceGuyFX
+{
+	+THRUGHOST
+}
+
+ACTOR IceGuyFX2_Toby : IceGuyFX2 replaces IceGuyFX2
+{
+	+THRUGHOST
+}

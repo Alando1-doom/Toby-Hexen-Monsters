@@ -1,0 +1,81 @@
+ACTOR Bishop_Toby : Bishop replaces Bishop
+{
+	States
+	{
+	Spawn:
+		BISH AB 10 A_Look
+		Loop
+	See:
+		BISH A 2 A_Chase
+		BISH A 2 A_BishopChase
+		BISH A 2
+		BISH B 2 A_BishopChase
+		BISH B 2 A_Chase
+		BISH B 2 A_BishopChase
+		BISH A 1 A_BishopDecide
+		BISH A 2 A_Chase
+		BISH A 2 A_BishopChase
+		BISH A 2
+		BISH B 2 A_BishopChase
+		BISH B 2 A_Chase
+		BISH B 2 A_BishopChase
+		BISH A 1 A_BishopDecide
+		BISH A 2 A_Chase
+		BISH A 2 A_BishopChase
+		BISH A 2
+		BISH B 2 A_BishopChase
+		BISH B 2 A_Chase
+		BISH B 2 A_BishopChase
+		BISH A 1 A_BishopDecide
+		BISH A 2 A_Chase
+		BISH A 2 A_BishopChase
+		BISH A 2
+		BISH B 2 A_BishopChase
+		BISH B 2 A_Chase
+		BISH B 2 A_BishopChase
+		BISH A 1 A_BishopDecide
+		BISH A 2 A_Chase
+		BISH A 2 A_BishopChase
+		BISH A 2 A_ActiveSound
+		BISH B 2 A_BishopChase
+		BISH B 2 A_Chase
+		BISH B 2 A_BishopChase
+		BISH A 1 A_BishopDecide
+		Loop
+	Blur:
+		BISH A 2 A_BishopDoBlur
+		BISH A 4 A_BishopSpawnBlur
+		Wait
+	Pain:
+		BISH C 6 A_Pain
+		BISH CCC 6 A_BishopPainBlur
+		BISH C 0
+		Goto See
+	Missile:
+		BISH A 3 A_FaceTarget
+		BISH DE 3 A_FaceTarget
+		BISH F 3 A_BishopAttack
+		BISH F 5 A_BishopAttack2
+		Wait
+	Death:
+		BISH G 6
+		BISH H 6 Bright A_Scream
+		BISH I 5 Bright A_NoBlocking
+		BISH J 5 BRIGHT A_Explode(random[BishopBoom](25,40))
+		BISH K 5 Bright
+		BISH LM 4 Bright
+		BISH N 4 A_SpawnItemEx("BishopPuff", 0,0,40, 0,0,0.5)
+		BISH O 4 A_QueueCorpse
+		BISH P -1
+		Stop
+	Ice:
+		BISH X 5 A_FreezeDeath
+		BISH X 1 A_FreezeDeathChunks
+		Wait
+	}
+}
+
+ACTOR BishopFX_Toby : BishopFX replaces BishopFX 
+{
+	+THRUGHOST
+}

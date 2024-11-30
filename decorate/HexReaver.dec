@@ -1,0 +1,101 @@
+ACTOR Wraith_Toby : Wraith replaces Wraith
+{
+	States
+	{
+	Spawn:
+		WRTH A 10
+		WRTH B 5 A_WraithInit
+		Goto Look
+	Look:
+		WRTH AB 15 A_Look
+		Loop
+	See:
+		WRTH ABCD 4 A_WraithChase
+		WRTH ABCD 4 A_WraithChase
+		WRTH ABCD 4 A_WraithChase
+		WRTH ABCD 4 A_WraithChase
+		WRTH ABCD 4 A_WraithChase
+		WRTH ABCD 4 A_WraithChase
+		WRTH A 0 A_ActiveSound
+		Loop
+	Pain:
+		WRTH A 2
+		WRTH H 6 A_Pain
+		Goto See
+	Melee:
+		WRTH E 6 A_FaceTarget
+		WRTH F 6 A_WraithFX3
+		WRTH G 6 A_WraithMelee
+		Goto See
+	Missile:
+		WRTH E 6 A_FaceTarget
+		WRTH F 6
+		WRTH G 6 A_CustomMissile("WraithFX1", 32, 0)
+		Goto See
+	Death:
+		WRTH I 4
+		WRTH J 4 A_Scream
+		WRTH KL 4
+		WRTH M 4 A_NoBlocking
+		WRTH N 4 A_QueueCorpse
+		WRTH O 4
+		WRTH PQ 5
+		WRTH R -1
+		Stop
+	XDeath:
+		WRT2 A 5
+		WRT2 B 5 A_Scream
+		WRT2 CD 5
+		WRT2 E 5 A_NoBlocking
+		WRT2 F 5 A_QueueCorpse
+		WRT2 G 5
+		WRT2 H -1
+		Stop
+	Ice:
+		WRT2 I 5 A_FreezeDeath
+		WRT2 I 1 A_FreezeDeathChunks
+		Wait
+	}
+}
+
+//ACTOR WraithBuried_Toby : Wraith_Toby replaces WraithBuried
+//{
+//	States
+//	{
+//	Spawn:
+//		Goto Super::Look
+//	See:
+//		WRTH A 2 A_WraithRaiseInit
+//		WRTH A 2 A_WraithRaise
+//		WRTH A 2 A_FaceTarget
+//		WRTH BB 2 A_WraithRaise
+//		Goto See + 1
+//	Chase:
+//		Goto Super::See
+//	}
+//}
+
+ACTOR WraithFX1_Toby : WraithFX1 replaces WraithFX1
+{
+	+THRUGHOST
+}
+
+ACTOR WraithFX2_Toby : WraithFX2 replaces WraithFX2
+{
+	+THRUGHOST
+}
+
+ACTOR WraithFX3_Toby : WraithFX3 replaces WraithFX3
+{
+	+THRUGHOST
+}
+
+ACTOR WraithFX4_Toby : WraithFX4 replaces WraithFX4
+{
+	+THRUGHOST
+}
+
+ACTOR WraithFX5_Toby : WraithFX4_Toby replaces WraithFX5
+{
+	+THRUGHOST
+}

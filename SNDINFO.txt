@@ -1,0 +1,100 @@
+//AFRIT
+
+$rolloff monsters/afrit/wingflap	linear	80 576
+monsters/afrit/wingflap	wingflap
+
+
+//ETTIN
+
+$rolloff monsters/ettin/walk	linear	80 576
+monsters/ettin/walk			ettnwalk
+
+//CENTAUR
+
+CentaurDeath					cntcth1
+$rolloff monsters/centaur/walk	linear	80 576
+monsters/centaur/walk	cntrwalk
+$rolloff monsters/centaur/shield	linear	80 576
+monsters/centaur/shield	centshld
+$rolloff monsters/centaur/shield2	linear	80 576
+monsters/centaur/shield2	centshl2
+
+//SLAUGHTOR
+
+monsters/slaughtor/sight		slausee
+monsters/slaughtor/active	slauact
+monsters/slaughtor/pain		slaupain
+monsters/slaughtor/death	cntdth2
+
+
+//CHAOS SERPENT - GREEN
+
+DemonSight              sbtsit5
+DemonActive             sbtsit5
+DemonPain               serppain
+DemonAttack             dematk2
+DemonDeath              sbtdth3
+DemonMissileFire        impfire2
+DemonMissileExplode     impact3
+$random monsters/chaosserpent/walk	{ serp/step1 serp/step2 serp/step3 }
+$rolloff serp/step1	linear	80 576
+serp/step1			dmnstep1
+$rolloff serp/step2	linear	80 576
+serp/step2			dmnstep2
+$rolloff serp/step3	linear	80 576
+serp/step3			dmnstep3
+
+
+//CHAOS SERPENT - BROWN
+
+monsters/brownserpent/sight			brwnserp
+monsters/brownserpent/active		bserpact
+monsters/brownserpent/pain			bserpain
+monsters/brownserpent/death		bserpdth
+
+
+//WENDIGO
+
+$rolloff monsters/wendigo/step	linear	80 576
+monsters/wendigo/step					wendstep
+
+
+//HERESIARCH
+
+$rolloff SorcererBallBounce	linear	80 512
+monsters/heresiarch/shield				hersshld
+
+
+//KORAX
+
+
+//FIGHTER BOSS
+
+monsters/boss/fighter		zedek
+
+//CLERIC BOSS
+
+monsters/boss/cleric		tradcts
+
+//MAGE BOSS
+
+monsters/boss/mage		menelkir
+
+
+//Boss Footsteps
+
+$random boss/steps	{ boss/step1 boss/step2 boss/step3 boss/step4 }
+//$rolloff boss/step1	linear	80 576
+boss/step1			bstep1
+//$rolloff boss/step2	linear	80 576
+boss/step2			bstep2
+//$rolloff boss/step3	linear	80 576
+boss/step3			bstep3
+//$rolloff boss/step4	linear	80 576
+boss/step4			bstep4
+
+
+//DARK SERVANT - MINOTAUR FRIEND
+
+$rolloff minotaur/hoof	linear	80 576
+minotaur/hoof			hoof
