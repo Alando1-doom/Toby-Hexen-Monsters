@@ -60,22 +60,23 @@ ACTOR SorcFX2_Toby : SorcFX2 replaces SorcFX2
 	}
 }
 
-
 // First ball (purple) - fires projectiles ----------------------------------
 
 ACTOR SorcBall1_Toby : SorcBall replaces SorcBall1
 {
-	-FULLVOLDEATH
+	//-FULLVOLDEATH
 	States
 	{
 	Spawn:
 		SBMP ABCDEFGHIJKLMNOP 2 Bright A_SorcBallOrbit
 		Loop
 	Pain:
-		SBMP A 5 Bright A_SorcBallPop
+		SBMP A 4 Bright A_SorcBallPop
+		SBMP A 1 Bright A_ChangeFlag("FULLVOLDEATH", 0)
 		SBMP B 2 Bright A_BounceCheck
 		Wait
 	Death:
+		SBS4 D 0 Bright A_ChangeFlag("FULLVOLDEATH", 0)
 		SBS4 D 0 Bright A_ChangeFlag("NOBOUNCESOUND", 1)
 		SBS4 D 5 Bright A_Explode(128,128)
 		SBS4 E 5 Bright
@@ -89,17 +90,19 @@ ACTOR SorcBall1_Toby : SorcBall replaces SorcBall1
 
 ACTOR SorcBall2_Toby : SorcBall replaces SorcBall2
 {
-	-FULLVOLDEATH
+	//-FULLVOLDEATH
 	States
 	{
 	Spawn:
 		SBMB ABCDEFGHIJKLMNOP 2 Bright A_SorcBallOrbit
 		Loop
 	Pain:
-		SBMB A 5 Bright A_SorcBallPop
+		SBMB A 4 Bright A_SorcBallPop
+		SBMB A 1 Bright A_ChangeFlag("FULLVOLDEATH", 0)
 		SBMB B 2 Bright A_BounceCheck
 		Wait
 	Death:
+		SBS4 D 0 Bright A_ChangeFlag("FULLVOLDEATH", 0)
 		SBS4 D 0 Bright A_ChangeFlag("NOBOUNCESOUND", 1)
 		SBS3 D 5 Bright A_Explode(128,128)
 		SBS3 E 5 Bright
@@ -112,17 +115,19 @@ ACTOR SorcBall2_Toby : SorcBall replaces SorcBall2
 
 ACTOR SorcBall3_Toby : SorcBall replaces SorcBall3
 {
-	-FULLVOLDEATH
+	//-FULLVOLDEATH
 	States
 	{
 	Spawn:
 		SBMG ABCDEFGHIJKLMNOP 2 Bright A_SorcBallOrbit
 		Loop
 	Pain:
-		SBMG A 5 Bright A_SorcBallPop
+		SBMG A 4 Bright A_SorcBallPop
+		SBMG A 1 Bright A_ChangeFlag("FULLVOLDEATH", 0)
 		SBMG B 2 Bright A_BounceCheck
 		Wait
 	Death:
+		SBS4 D 0 Bright A_ChangeFlag("FULLVOLDEATH", 0)
 		SBS4 D 0 Bright A_ChangeFlag("NOBOUNCESOUND", 1)
 		SBS3 D 5 Bright A_Explode(128,128)
 		SBS3 E 5 Bright
