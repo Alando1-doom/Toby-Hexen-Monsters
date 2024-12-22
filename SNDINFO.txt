@@ -62,6 +62,7 @@ monsters/wendigo/step					wendstep
 //HERESIARCH
 
 $rolloff SorcererBallBounce	linear	80 512
+$rolloff SorcererBigBallExplode linear		80 192
 monsters/heresiarch/shield				hersshld
 
 
