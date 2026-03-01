@@ -106,3 +106,39 @@ ACTOR Demon2_Toby : Demon1_Toby replaces Demon2
 		Goto Death+2	
 	}
 }
+
+ACTOR Demon1FX1_Toby: Demon1FX1 replaces Demon1FX1
+{
+	+THRUGHOST
+	States
+	{
+	Spawn:
+		DMFX A 4 Bright A_PlaySoundEx("projectiles/fireball2", "Auto", 1, 0)
+		DMFX BC 4 Bright
+		Loop
+	Death:
+		DMFX D 1 Bright A_StopSound
+		DMFX D 3 Bright A_PlaySoundEx("DemonMissileExplode", "Auto", 0, 0)
+		DMFX E 4 Bright
+		DMFX FGH 3 Bright
+		Stop
+	}
+}
+
+ACTOR Demon2FX1_Toby: Demon2FX1 replaces Demon2FX1
+{
+	+THRUGHOST
+	States
+	{
+	Spawn:
+		D2FX A 4 Bright A_PlaySoundEx("projectiles/fireball2", "Auto", 1, 0)
+		D2FX BCDEF 4 Bright
+		Loop
+	Death:
+		D2FX G 1 Bright A_StopSound
+		D2FX G 3 Bright A_PlaySoundEx("DemonMissileExplode", "Auto", 0, 0)
+		D2FX HIJ 4 Bright
+		D2FX KL 3 Bright
+		Stop
+	}
+}

@@ -146,4 +146,18 @@ ACTOR CentaurLeader_Toby : Centaur_Toby replaces CentaurLeader
 ACTOR CentaurFX_Toby : CentaurFX replaces CentaurFX
 {
 	+THRUGHOST
+	States
+	{
+	Spawn:
+		CTFX A 2 Bright A_PlaySoundEx("projectiles/centaur", "Auto", 1, 0)
+		Loop
+	Death:
+		CTFX B 2 Bright A_StopSound
+		CTFX B 2 Bright A_PlaySoundEx("CentaurMissileExplode", "Auto", 0, 0)
+		CTFX C 3 Bright
+		CTFX D 4 Bright
+		CTFX E 3 Bright
+		CTFX F 2 Bright
+		Stop
+	}
 }

@@ -99,3 +99,23 @@ boss/step4			bstep4
 
 $rolloff minotaur/hoof	linear	80 576
 minotaur/hoof			hoof
+
+
+//Projectile Sounds
+projectiles/fireball1		firball1
+$rolloff projectiles/fireball1           linear 64 1000
+projectiles/fireball2		firball2
+$rolloff projectiles/fireball2           linear 64 1000
+projectiles/iceball		wendball
+$rolloff projectiles/iceball           linear 64 1000
+projectiles/centaur		centball
+$rolloff projectiles/centaur           linear 64 1000
+projectiles/bishop		bishball
+$rolloff projectiles/bishop           linear 64 1000
+projectiles/heresiarch		hersball
+$rolloff projectiles/heresiarch           linear 64 1000
+projectiles/minotaur		minowave
+$rolloff projectiles/minotaur           linear 64 1000
+projectiles/firex			lobhit
+projectiles/fire2x			firbal2x
+projectiles/icex				icebalx

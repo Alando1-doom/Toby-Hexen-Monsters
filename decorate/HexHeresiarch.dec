@@ -135,3 +135,23 @@ ACTOR SorcBall3_Toby : SorcBall replaces SorcBall3
 		Stop
 	}
 }
+
+//Purple Ball
+
+ACTOR SorcFX4_Toby: SorcFX4 replaces SorcFX4
+{
+	+THRUGHOST
+	States
+	{
+	Spawn:
+		SBS4 A 2 Bright A_PlaySoundEx("projectiles/heresiarch", "Auto", 1, 0)
+		SBS4 BC 2 Bright A_SorcFX4Check
+		Loop
+	Death:
+		SBS4 D 1 Bright A_StopSound
+		SBS4 D 1 Bright A_PlaySoundEx("SorcererBallExplode", "Auto", 0, 0)
+		SBS4 E 2 Bright A_Explode(20, 128)
+		SBS4 FGH 2 Bright
+		Stop
+	}
+}

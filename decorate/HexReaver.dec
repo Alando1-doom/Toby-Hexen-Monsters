@@ -78,6 +78,22 @@ ACTOR Wraith_Toby : Wraith replaces Wraith
 ACTOR WraithFX1_Toby : WraithFX1 replaces WraithFX1
 {
 	+THRUGHOST
+	States
+	{
+	Spawn:
+		WRBL A 3 Bright A_PlaySoundEx("projectiles/fireball2", "Auto", 1, 0)
+		WRBL B 3 Bright A_WraithFX2
+		WRBL C 3 Bright
+		Loop
+	Death:
+		WRBL D 1 Bright A_StopSound
+		WRBL D 3 Bright A_PlaySoundEx("WraithMissileExplode", "Auto", 0, 0)
+		WRBL E 4 Bright A_WraithFX2
+		WRBL F 4 Bright
+		WRBL GH 3 Bright A_WraithFX2
+		WRBL I 3 Bright
+		Stop
+	}
 }
 
 ACTOR WraithFX2_Toby : WraithFX2 replaces WraithFX2
