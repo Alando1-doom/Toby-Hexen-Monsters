@@ -1,0 +1,35 @@
+ACTOR MinotaurFX1_Toby: MinotaurFX1 replaces MinotaurFX1
+{
+	+THRUGHOST
+	States
+	{
+	Spawn:
+		FX12 A 6 Bright A_PlaySoundEx("projectiles/fireball1", "Auto", 1, 0)
+		FX12 B 6 Bright
+		Loop
+	Death:
+		FX12 C 1 A_StopSound
+		FX12 C 4 A_PlaySoundEx("projectiles/firex", "Auto", 0, 0)
+		FX12 DEFGH 5 Bright
+		Stop
+	}
+}
+
+
+ACTOR MinotaurFX2_Toby : MinotaurFX2 replaces MinotaurFX2
+{
+	+THRUGHOST
+	states
+	{
+	Spawn:
+		FX13 A 2 Bright A_MntrFloorFire
+		FX13 A 0 Bright A_PlaySoundEx("projectiles/minotaur", "Auto", 1, 0)
+		Loop
+	Death:
+		FX13 I 1 Bright A_StopSound
+		FX13 I 3 Bright A_Explode
+		FX13 I 1 Bright A_PlaySoundEx("projectiles/fire2x", "Auto", 0, 0)
+		FX13 JKLM 4 Bright
+		Stop
+	}
+}

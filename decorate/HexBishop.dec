@@ -78,4 +78,19 @@ ACTOR Bishop_Toby : Bishop replaces Bishop
 ACTOR BishopFX_Toby : BishopFX replaces BishopFX 
 {
 	+THRUGHOST
+	States
+	{
+	Spawn:
+		BPFX A 1 Bright A_PlaySoundEx("projectiles/bishop", "Auto", 1, 0)
+		BPFX A 0 Bright A_BishopMissileWeave
+		BPFX BAB 1 Bright A_BishopMissileWeave
+		BPFX B 0 Bright A_SeekerMissile(2,3)
+		Loop
+	Death:
+		BPFX C 1 Bright A_StopSound
+		BPFX C 3 Bright A_PlaySoundEx("BishopMissileExplode", "Auto", 0, 0)
+		BPFX DEF 4 Bright
+		BPFX GH 3 Bright
+		Stop
+	}
 }

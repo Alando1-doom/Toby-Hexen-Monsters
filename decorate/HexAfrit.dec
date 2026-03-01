@@ -52,4 +52,15 @@ ACTOR FireDemon_Toby : FireDemon replaces FireDemon
 ACTOR FireDemonMissile_Toby : FireDemonMissile replaces FireDemonMissile
 {
 	+THRUGHOST
+	States
+	{
+	Spawn:
+		FDMB A 5 Bright A_PlaySoundEx("projectiles/fireball1", "Auto", 1, 0)
+		Loop
+	Death:
+		FDMB B 1 Bright A_StopSound
+		FDMB B 4 Bright A_PlaySoundEx("FireDemonMissileHit", "Auto", 0, 0)
+		FDMB CDE 5 Bright
+		Stop
+	}
 }

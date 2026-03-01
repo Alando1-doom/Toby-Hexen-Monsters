@@ -33,6 +33,20 @@ ACTOR IceGuy_Toby : IceGuy replaces IceGuy
 ACTOR IceGuyFX_Toby : IceGuyFX replaces IceGuyFX
 {
 	+THRUGHOST
+	States
+	{
+	Spawn:
+		ICPR A 3 Bright A_PlaySoundEx("projectiles/iceball", "Auto", 1, 0)
+		ICPR BC 3 Bright A_SpawnItemEx("IceFXPuff", 0,0,2)
+		Loop
+	Death:
+		ICPR D 1 Bright A_StopSound
+		ICPR D 3 Bright A_PlaySoundEx("IceGuyMissileExplode", "Auto", 0, 0)
+		ICPR E 4 Bright A_IceGuyMissileExplode
+		ICPR FG 4 Bright
+		ICPR H 3 Bright
+		Stop
+	}
 }
 
 ACTOR IceGuyFX2_Toby : IceGuyFX2 replaces IceGuyFX2
