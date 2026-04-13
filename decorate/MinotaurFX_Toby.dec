@@ -4,7 +4,7 @@ ACTOR MinotaurFX1_Toby: MinotaurFX1 replaces MinotaurFX1
 	States
 	{
 	Spawn:
-		FX12 A 6 Bright A_PlaySoundEx("projectiles/fireball1", "Auto", 1, 0)
+		FX12 A 6 Bright A_PlaySoundEx("projectiles/minofire", "Auto", 1, 0)
 		FX12 B 6 Bright
 		Loop
 	Death:

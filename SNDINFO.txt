@@ -106,6 +106,12 @@ projectiles/fireball1		firball1
 $rolloff projectiles/fireball1           linear 64 1000
 projectiles/fireball2		firball2
 $rolloff projectiles/fireball2           linear 64 1000
+projectiles/fireball3		firball3
+$rolloff projectiles/fireball3           linear 64 1000
+projectiles/chaosfire1		firball2
+$rolloff projectiles/chaosfire1           linear 64 1000
+projectiles/chaosfire2		firball2
+$rolloff projectiles/chaosfire2           linear 64 1000
 projectiles/iceball		wendball
 $rolloff projectiles/iceball           linear 64 1000
 projectiles/centaur		centball
@@ -114,6 +120,8 @@ projectiles/bishop		bishball
 $rolloff projectiles/bishop           linear 64 1000
 projectiles/heresiarch		hersball
 $rolloff projectiles/heresiarch           linear 64 1000
+projectiles/minofire		firball1
+$rolloff projectiles/minofire           linear 64 1000
 projectiles/minotaur		minowave
 $rolloff projectiles/minotaur           linear 64 1000
 projectiles/firex			lobhit
