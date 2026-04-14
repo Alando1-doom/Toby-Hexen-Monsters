@@ -1,0 +1,17 @@
+ACTOR DragonFireball_Toby: DragonFireball replaces DragonFireball
+{
+	States
+	{
+	Spawn:
+		DRFX A 4 Bright A_PlaySoundEx("projectiles/fireball3", "Auto", 1, 0)
+		DRFX BCDEF 4 Bright
+		Loop
+	Death:
+		DRFX G 3 Bright A_StopSound
+		DRFX G 1 Bright A_PlaySoundEx("DragonFireballExplode", "Auto", 0, 0)
+		DRFX HI 4 Bright
+		DRFX J 4 Bright A_DragonFX2
+		DRFX KL 3 Bright
+		Stop
+	}
+}

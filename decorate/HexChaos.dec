@@ -113,7 +113,7 @@ ACTOR Demon1FX1_Toby: Demon1FX1 replaces Demon1FX1
 	States
 	{
 	Spawn:
-		DMFX A 4 Bright A_PlaySoundEx("projectiles/fireball2", "Auto", 1, 0)
+		DMFX A 4 Bright A_PlaySoundEx("projectiles/chaosfire1", "Auto", 1, 0)
 		DMFX BC 4 Bright
 		Loop
 	Death:
@@ -131,7 +131,7 @@ ACTOR Demon2FX1_Toby: Demon2FX1 replaces Demon2FX1
 	States
 	{
 	Spawn:
-		D2FX A 4 Bright A_PlaySoundEx("projectiles/fireball2", "Auto", 1, 0)
+		D2FX A 4 Bright A_PlaySoundEx("projectiles/chaosfire2", "Auto", 1, 0)
 		D2FX BCDEF 4 Bright
 		Loop
 	Death:
